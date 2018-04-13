@@ -65,6 +65,9 @@ app.post('/store', function(req, res) {
       if (data.body['refresh_token']) {
         spotifyApi.setRefreshToken(data.body['refresh_token']);
       }
+    
+    print(req.body.text);
+    
       if (req.body.text.trim().length === 0) {
           return res.send('Enter the name of a song and the name of the artist, separated by a "-"\nExample: Blue (Da Ba Dee) - Eiffel 65');
       }
